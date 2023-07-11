@@ -1,0 +1,70 @@
+<script>
+  // 배열의 forEach와 비슷한 메소드들
+  const array = [
+    { name: "홍길동", age: 12 },
+    { name: "임꺽정", age: 13 },
+  ];
+
+  // forEach : 배열의 데이터를 반복하는데 결과 값이 필요 없을 경우
+  array.forEach((value, index, array) => {
+    console.log(value);
+  });
+
+  // filter : 배열의 데이터를 반복하는데
+  // 조건에 맞는 요소만 걸러낼 때
+  // 콜백 함수의 return값이 true나 false여야 한다.
+  // 콜백 함수의 리턴 값에 따라 리스트에 남거나(true) 필터링(false) 된다
+  // 나이가 13살 이상인 사람만 필터링
+  const check = (value, index, array) => {
+    // if(value.age > 12){
+    //     return true;
+    // } else {
+    //     return false;
+    // }
+    return value.age > 12;
+  };
+
+  const result1 = array.filter(check);
+  console.log("result1");
+  console.log(result1);
+
+  // map : 배열의 데이터를 반복하는데
+  // 기존의 데이터 형식을 다른 형식으로 변경할 때
+  // 콜백 함수를 받아 return 값이 어느 것이든 될 수 있다
+  // map은 객체 Map하고 전혀 상관 없으니 주의
+  // 기존의 객체 배열 -> 이름만 있는 문자열 배열로 전환
+
+  const result2 = array.map((value, index, array) => {
+    return value.name;
+  });
+  console.log("result2");
+  console.log(result2);
+
+
+  // 실습
+  // forEach
+  // name님 안녕하세요 반복 출력
+  array.forEach((value) => {
+    console.log(value.name + "님 안녕하세요");
+  });
+  array.forEach((value) => console.log(value.name + "님 안녕하세요"));
+
+  // filter - 이름에 '길'자가 들어간 사람만 남기기
+  const fResult = array.filter((value) => {
+    return value.name.includes('길');
+  });
+  const fResultOne = array.filter((value) => value.name.includes('길'));
+  
+  console.log("fResult");
+  console.log(fResult);
+
+  // map - 나이만 뽑아서 숫자 배열 만들기
+  const mResult = array.map((value) => {
+    return value.age;
+  });
+  const mResultOne = array.map((value) => value.age);
+
+  console.log("mResult");
+  console.log(mResult);
+
+</script>
