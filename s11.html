@@ -1,0 +1,23 @@
+<h1 id ="time"></h1>
+
+<script>
+
+    // setTimeout
+    // 정해진 시간이 되면 내부 코드 작동
+    // 3초 뒤에 메시지 띄워줘
+    // 매개변수 - 콜백함수, 시간(ms)
+    // setTimeout(() => {
+    //     alert("3초 지남ㅋ");
+    // }, 3000);
+
+    // setInterval
+    // 정해놓은 시간마다 내부 코드가 작동
+    setInterval(() => {
+        const tag = document.getElementById("time");
+        // tag.innerText = Date.now();
+        const date = new Date();
+        tag.innerText = `${date.getHours()}시 ${date.getMinutes()}분 ${date.getSeconds()}초`;
+
+        // console.log(Date.now());
+    }, 1000)
+</script>
