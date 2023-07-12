@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 로컬 스토리지
+        // 데이터 저장
+        // key value가 필요
+        // key value 모두 문자열이어야만 한다 (객체 사용 X)
+        localStorage.setItem("theme", "light");
+
+        const obj = {
+            name : "홍길동",
+            age : 12
+        };
+        
+
+        // json - 자바스크립트 객체 형태의 문자열
+        const objJson = JSON.stringify(obj);
+        // 문자열로 바뀜
+        // "{\"name\":\"홍길동\",\"age\":12}"
+
+        localStorage.setItem("theme", objJson);
+
+        const resultJson = localStorage.getItem("theme");
+        // 문자열이기 때문에 제대로 뜸
+        // console.log(resultJson);
+        // alert(resultJson);
+        
+        // json 문자열을 자바스크립트 객체로 파싱
+        const result = JSON.parse(resultJson);
+        console.log(result);
+        alert(result);
+        
+        result.name;
+
+    </script>
+</body>
+</html>

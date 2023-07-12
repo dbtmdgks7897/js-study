@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- beforebegin -->
+    <ul id="list">
+        <!-- afterbegin -->
+        
+        <!-- beforeend -->
+    </ul>
+    <!-- afterend -->
+
+
+    <script>
+        // id가 list인 ul을 가져온다
+        const ulList = document.querySelector("#list");
+
+        // ul안에 li 삽입
+        // 1. 문자열로 태그 안에 자식 태그 넣기
+        // ulList.innerHTML = `<li id="item1" style="color:red;">바나나</li><li>사과</li>`;
+        // 2. 자바스크립트에서 태그를 만들어서 넣는 방법
+        const li1 = document.createElement("li");
+        li1.innerText = "바나나";
+        const li2 = document.createElement("li");
+        li2.innerText = "사과";
+
+        ulList.appendChild(li1);
+        ulList.appendChild(li2);
+
+        // 연습
+        const fruitList = ["melon", "watermelon","strawberry"];
+        // 반복문과 createElement, appendChild 이용해 li 추가
+        for (const iterator of fruitList) {
+            const t_li = document.createElement("li");
+            t_li.innerText = iterator;
+            ulList.appendChild(t_li);
+        }
+        // fruitList.forEach((element) => {
+        //     const t = document.createElement("li");
+        //     t.innerText = element;
+        //     ulList.appendChild(t);
+        // });
+        
+        // 3. insertAdjacentHTML
+        // 문자열로 태그를 만들어서 추가 시킬 수 있다
+        // 태그를 넣는 위치도 고를 수 있다
+        ulList.insertAdjacentHTML(
+            "beforeend",
+            `<li>무화과</li>`
+        );
+
+        const fruitList1 = ["mango", "mandarin", "한라봉"];
+        // insertAdjacentHTML, forEach 사용해서 추가
+        fruitList1.forEach(element => {
+            ulList.insertAdjacentHTML(
+                "beforeend",
+                `<li>${element}</li>`
+            );
+        });
+    </script>
+</body>
+</html>

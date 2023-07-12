@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dark {
+            background-color: black;
+        }
+        .dark > button {
+            background-color: #fff;
+            color: black;
+        }
+        button {
+            background: #000;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button id="bgc_changer">배경 바꾸기</button>
+    <script>
+        // body의 배경을 흰색 검은색
+        // style, class
+        const bodyTag = document.body;
+        const setBackColor = () => {
+            if(localStorage.getItem("theme") === "dark"){
+                bodyTag.classList.add("dark");
+            }
+        };
+        setBackColor();
+
+        // 변경 버튼을 누르면 흰색 검은색 토글
+        // 이벤트 리스너
+        const bgcChanger = document.querySelector("#bgc_changer");
+        bgcChanger.addEventListener("click", () => {
+            if(bodyTag.classList.contains("dark")){
+                bodyTag.classList.remove("dark");
+                localStorage.setItem("theme", "light");
+            } else {
+                bodyTag.classList.add("dark");
+                localStorage.setItem("theme", "dark");
+            }
+        });
+        
+        // 새로고침해도 색깔이 유지되어야 한다
+        // 로컬 스토리지
+        
+    </script>
+</body>
+</html>
