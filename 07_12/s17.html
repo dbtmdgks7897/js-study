@@ -10,10 +10,10 @@
     <script>
         // 화면에 키보드 입력 시 h1에 key가 들어가도록
         // 1.
-        // document.body.addEventListener("keyup", (event) => {
-        //     const first = document.querySelector("#first");
-        //     first.innerHTML += event.key;
-        // });
+        document.body.addEventListener("keyup", (event) => {
+            const first = document.querySelector("#first");
+            first.innerHTML += event.key;
+        });
 
         // 2. 단축키 만들기
         document.body.addEventListener("keyup", (event) => {

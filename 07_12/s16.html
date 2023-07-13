@@ -28,7 +28,7 @@
             alert("세번째 클릭");
         }
         // 프로퍼티를 null로 만들면 기능을 없앨 수 있다
-        third.onclick = null;
+        // third.onclick = null;
 
         const fourth = document.querySelector("#fourth");
 
@@ -45,11 +45,7 @@
         // 이벤트 리스너는 여러개가 달릴 수 있다
         fourth.addEventListener("click", clickEvent);
         // 특정 이벤트 리스너를 삭제할 수 있다
-        fourth.removeEventListener("click", clickEvent);
-
-        document.querySelector("#first").addEventListener("click", () => {
-            
-        });
+        fourth.removeEventListener("click", clickEvent);;
 
     </script>
 </body>

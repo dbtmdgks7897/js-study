@@ -33,9 +33,10 @@
         
         // json 문자열을 자바스크립트 객체로 파싱
         const result = JSON.parse(resultJson);
+        // 오브젝트가 제대로 뜸
         console.log(result);
+        // 팝업에 [object Object] 라고 뜸. (잘못됨)
         alert(result);
-        
         result.name;
 
     </script>

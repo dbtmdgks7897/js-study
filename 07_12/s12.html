@@ -15,9 +15,7 @@
       <li class="my-li"></li>
     </ul>
 
-    <h1 class="second">
-
-    </h1>
+    <h1 class="second"></h1>
 
     <script>
       // window : 화면에 필요한 객체나 메소드들을 가지고 있는 최상위 객체
@@ -39,15 +37,13 @@
       const secondTagList = document.getElementsByClassName("second");
       // 값 넣을 때 둘 중 하나
       // 1. 반복문 이용
-      for (let i = 0; i < secondTag.length; i++) {
-        secondTagList[i].innerText = `두-번째`;
-        
-      }
+      //   for (let i = 0; i < secondTag.length; i++) {
+      //     secondTagList[i].innerText = `두-번째`;
+      //   }
       // 2. if문으로 요소 확인
-      if(secondTagList.length > 0){
-        secondTagList[0].innerText = '두번-째'
+      if (secondTagList.length > 0) {
+        secondTagList[0].innerText = "두번-째";
       }
-      secondTag[0].innerText = '두번째입니다.'
     </script>
   </body>
 </html>
